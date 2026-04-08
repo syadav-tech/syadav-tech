@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Yadav — Programme Manager & Systems Engineer</title>
+<meta name="description" content="Shubham Yadav — Systems & Requirements Engineer at Jaguar Land Rover. Programme Management specialist with 9+ years across automotive OEMs. PMP® certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0c0c;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --gold: #c8a96e;
+    --gold-dim: #8a6e3e;
+    --text: #f0ebe0;
+    --text-muted: #9a9282;
+    --text-dim: #5c5650;
+    --border: rgba(200,169,110,0.18);
+    --border-dim: rgba(255,255,255,0.06);
+    --radius: 6px;
+    --nav-h: 64px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(12,12,12,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 max(2rem, 5vw);
+    z-index: 100;
+    transition: border-color 0.3s;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    padding: 0.45rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    color: #0c0c0c;
+  }
+
+  /* ─── HAMBURGER ─── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--text-muted);
+    transition: all 0.3s;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: calc(var(--nav-h) + 4rem) max(2rem, 8vw) 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-line {
+    position: absolute;
+    right: 8vw;
+    top: 15vh;
+    width: 1px;
+    height: 60vh;
+    background: linear-gradient(to bottom, transparent, var(--border), transparent);
+  }
+
+  .hero-content { align-self: center; max-width: 720px; }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.25s forwards;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.55s forwards;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.65s forwards;
+  }
+
+  .tag {
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--border-dim);
+    border-radius: 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .tag.gold {
+    border-color: var(--gold-dim);
+    color: var(--gold);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.75s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: #0c0c0c;
+    padding: 0.75rem 1.8rem;
+    border-radius: var(--radius);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { background: #d4b87e; transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1.8rem;
+    border-radius: var(--radius);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-1px);
+  }
+
+  .hero-scroll {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--text-dim);
+    animation: expandWidth 1.5s 1.5s forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 7rem max(2rem, 8vw);
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::after {
+    content: '';
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: var(--border-dim);
+    max-width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--bg2); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background: var(--bg3);
+    transition: border-color 0.3s;
+  }
+
+  .stat-card:hover { border-color: var(--border); }
+
+  .stat-number {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+
+  .visa-note {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-left: 2px solid var(--gold-dim);
+    background: rgba(200,169,110,0.05);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .visa-note strong { color: var(--gold); }
+
+  /* ─── EXPERIENCE ─── */
+  #experience { background: var(--bg); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+
+  .timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2.4rem;
+    top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,169,110,0.15);
+  }
+
+  .timeline-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .timeline-company {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .timeline-role-block {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-role {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 0.15rem;
+  }
+
+  .timeline-role-bracket {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  .timeline-summary {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 620px;
+    line-height: 1.75;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .timeline-bullets li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .timeline-bullets li::before {
+    content: '–';
+    color: var(--gold-dim);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .timeline-bullets li strong { color: var(--text); font-weight: 500; }
+
+  .timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .timeline-tags .tag {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--bg2); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    background: var(--bg3);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+  }
+
+  .skill-group.visible { opacity: 1; transform: translateY(0); }
+  .skill-group:hover { border-color: var(--border); }
+
+  .skill-group-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tags .tag {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.75rem;
+  }
+
+  /* ─── EDUCATION ─── */
+  #education { background: var(--bg); }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius);
+    padding: 2rem;
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+  }
+
+  .edu-card.visible { opacity: 1; transform: translateY(0); }
+  .edu-card:hover { border-color: var(--border); }
+
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold-dim), transparent);
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-field {
+    font-size: 0.88rem;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .edu-institution {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+
+  /* ─── CERTIFICATIONS ─── */
+  #certifications { background: var(--bg2); }
+
+  .cert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    background: var(--bg3);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+  }
+
+  .cert-item.visible { opacity: 1; transform: translateY(0); }
+  .cert-item:hover { border-color: var(--border); }
+
+  .cert-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+
+  .cert-name {
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .cert-issuer {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--bg);
+    text-align: center;
+    padding: 8rem max(2rem, 8vw);
+  }
+
+  #contact .section-label { justify-content: center; }
+  #contact .section-label::after { display: none; }
+  #contact .section-title { margin-bottom: 1rem; }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius);
+    padding: 0.85rem 1.5rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .contact-link-icon {
+    font-size: 1rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border-dim);
+    padding: 2rem max(2rem, 8vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    color: var(--gold);
+  }
+
+  .footer-note {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: var(--border-dim);
+    margin: 3rem 0;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes expandWidth {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* ─── WRITING / BLOGS ─── */
+  #writing { background: var(--bg); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .blog-card {
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    background: var(--bg2);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold-dim), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .blog-card:hover { border-color: var(--border); }
+  .blog-card:hover::before { opacity: 1; }
+  .blog-card.visible { opacity: 1; transform: translateY(0); }
+
+  .blog-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .blog-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .blog-card:hover .blog-title { color: var(--gold); }
+
+  .blog-desc {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .blog-arrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .blog-card:hover .blog-arrow { color: var(--gold); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: rgba(12,12,12,0.97);
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .timeline { padding-left: 1.5rem; }
+    .timeline-dot { left: -1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-brand">SY.</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/sy1394/" class="nav-cta" target="_blank">LinkedIn</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-line"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Based in Leamington Spa, United Kingdom</p>
+    <h1 class="hero-name">Shubham<br><em>Yadav</em></h1>
+    <p class="hero-title">Programme Manager &amp; Systems Engineer</p>
+    <p class="hero-desc">
+      9+ years driving complex programmes across Tier-1 automotive OEMs — from product development at JK Tyre to requirements engineering at Jaguar Land Rover. Passionate about structured execution, stakeholder alignment, and transformational change.
+    </p>
+    <div class="hero-tags">
+      <span class="tag gold">PMP® Certified</span>
+      <span class="tag">Jaguar Land Rover</span>
+      <span class="tag">JK Tyre</span>
+      <span class="tag">APQP / PPAP</span>
+      <span class="tag">V-Model</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#experience" class="btn-primary">View Experience ↓</a>
+      <a href="https://www.linkedin.com/in/sy1394/" class="btn-secondary" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-line"></span>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Profile</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I am a <strong>Systems &amp; Requirements Engineer</strong> at Jaguar Land Rover and a career-focused <strong>Programme Manager</strong> with a decade of experience spanning automotive product development, OEM programme delivery, and cross-functional team leadership.
+      </p>
+      <p>
+        My career began in product development and programme management at JK Tyre, where I managed <strong>10+ simultaneous projects</strong> across 6–10 OEM brands and led 6 major retail replacement product launches — coordinating cross-functional teams of 10–15 people and building deep expertise in APQP, PPAP, homologation, and NPI cycles.
+      </p>
+      <p>
+        At JLR, I focus on <strong>requirements generation and standardisation</strong> within a highly complex systems environment, applying V-Model thinking and stage-gate governance to shape product quality from concept through validation.
+      </p>
+      <p>
+        I am now targeting <strong>Senior Programme / Transformation Manager roles</strong> in consulting, automotive, and financial services — leveraging my cross-domain experience, structured execution mindset, and PMP® certification.
+      </p>
+      <div class="visa-note">
+        <strong>UK Work Authorisation:</strong> Skilled Worker Visa — valid until 2028. Sponsorship required.
+      </div>
+    </div>
+    <div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">9+</div>
+          <div class="stat-label">Years of industry experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Concurrent projects managed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Major OTC product launches</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6–10</div>
+          <div class="stat-label">OEM brands served simultaneously</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Career</p>
+  <h2 class="section-title">Work Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-meta">
+        <span class="timeline-date">2023 — Present</span>
+        <span class="timeline-company">Jaguar Land Rover · Gaydon, UK</span>
+      </div>
+      <div class="timeline-role-block">
+        <div class="timeline-role">Systems &amp; Requirements Engineer</div>
+        <div class="timeline-role-bracket">[ Requirements &amp; Delivery Contributor — Product Engineering ]</div>
+      </div>
+      <p class="timeline-summary">
+        Individual contributor role focused on end-to-end requirements generation and standardisation within JLR's complex V-Model development environment. Exercising cross-functional influence without formal authority across engineering, validation, and programme teams.
+      </p>
+      <ul class="timeline-bullets">
+        <li>Drive <strong>requirements generation and standardisation</strong> across vehicle systems, ensuring traceability from customer need through to validation sign-off.</li>
+        <li>Collaborate with multi-disciplinary engineering stakeholders to align on system requirements, reducing ambiguity and rework across stage-gate deliverables.</li>
+        <li>Apply <strong>V-Model methodology</strong> to structure requirements at system, sub-system, and component levels in compliance with JLR product development processes.</li>
+        <li>Influence programme outcomes as an individual contributor — coordinating cross-functional alignment across teams without direct management authority.</li>
+        <li>Contribute to requirements tooling and process improvement initiatives to improve standardisation and downstream quality.</li>
+      </ul>
+      <div class="timeline-tags">
+        <span class="tag">V-Model</span>
+        <span class="tag">Requirements Engineering</span>
+        <span class="tag">Stage-Gate</span>
+        <span class="tag">Systems Engineering</span>
+        <span class="tag">SPOC</span>
+        <span class="tag">Stakeholder Management</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-meta">
+        <span class="timeline-date">2016 — 2022</span>
+        <span class="timeline-company">JK Tyre &amp; Industries · India</span>
+      </div>
+      <div class="timeline-role-block">
+        <div class="timeline-role">Product Development &amp; Programme Management</div>
+        <div class="timeline-role-bracket">[ Multiple OEM accounts — Senior Individual Contributor ]</div>
+      </div>
+      <p class="timeline-summary">
+        ~6.5 years spanning product development and programme management across multiple OEM brands, leading NPI/NPD cycles and large-scale product launches. Managed 10+ concurrent projects and 6 major Over-The-Counter launches for Tier-1 automotive OEM customers across India.
+      </p>
+      <ul class="timeline-bullets">
+        <li>Managed <strong>10+ simultaneous development projects</strong> across 6–10 OEM brands including [OEM names — please add], applying APQP and stage-gate governance to ensure on-time delivery and quality compliance.</li>
+        <li>Led <strong>6 major retail replacement (OTC) product launches</strong> from concept to commercialisation — coordinating cross-functional teams of 10–15 across R&amp;D, manufacturing, quality, and commercial functions. OTC refers to tyres sold through retail dealerships and aftermarket channels, distinct from OEM-fitted tyres.</li>
+        <li>Owned <strong>PPAP documentation and DVP execution</strong> for new product submissions, managing supplier interfaces and customer approvals in line with OEM-specific requirements.</li>
+        <li>Spearheaded homologation activities for new tyre variants, coordinating certification testing, regulatory sign-off, and programme tracking across multiple accounts.</li>
+        <li>Served as the programme <strong>SPOC</strong> for key OEM relationships — driving review cadences, RAID management, and escalation handling to maintain customer confidence.</li>
+        <li>Drove CapEx planning for NPI tooling and testing infrastructure, aligning investment decisions with programme milestones.</li>
+      </ul>
+      <div class="timeline-tags">
+        <span class="tag">APQP</span>
+        <span class="tag">PPAP</span>
+        <span class="tag">DVP</span>
+        <span class="tag">NPI / NPD</span>
+        <span class="tag">Homologation</span>
+        <span class="tag">RAID</span>
+        <span class="tag">CapEx Planning</span>
+        <span class="tag">Programme Management</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Competencies</p>
+  <h2 class="section-title">Skills &amp; Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Programme Management</div>
+      <div class="skill-tags">
+        <span class="tag">APQP / PPAP</span>
+        <span class="tag">Stage-Gate</span>
+        <span class="tag">RAID Management</span>
+        <span class="tag">NPI / NPD</span>
+        <span class="tag">CapEx Planning</span>
+        <span class="tag">Risk Management</span>
+        <span class="tag">Governance</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Systems &amp; Engineering</div>
+      <div class="skill-tags">
+        <span class="tag">V-Model</span>
+        <span class="tag">Requirements Engineering</span>
+        <span class="tag">DVP</span>
+        <span class="tag">Homologation</span>
+        <span class="tag">Validation Planning</span>
+        <span class="tag">SPOC</span>
+        <span class="tag">Traceability</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Stakeholder &amp; Delivery</div>
+      <div class="skill-tags">
+        <span class="tag">Cross-functional Leadership</span>
+        <span class="tag">OEM Account Management</span>
+        <span class="tag">Executive Reporting</span>
+        <span class="tag">Review Cadences</span>
+        <span class="tag">Escalation Handling</span>
+        <span class="tag">Change Management</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frameworks &amp; Methods</div>
+      <div class="skill-tags">
+        <span class="tag">Agile / Scrum</span>
+        <span class="tag">Lean Thinking</span>
+        <span class="tag">PMP® Framework</span>
+        <span class="tag">GenAI Workflows</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">Process Standardisation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Domain Knowledge</div>
+      <div class="skill-tags">
+        <span class="tag">Automotive OEM</span>
+        <span class="tag">Tyre / Rubber Technology</span>
+        <span class="tag">Vehicle Systems</span>
+        <span class="tag">Premium / Luxury Vehicles</span>
+        <span class="tag">Product Homologation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools &amp; Technology</div>
+      <div class="skill-tags">
+        <span class="tag">DOORS / Requirements Tools</span>
+        <span class="tag">Microsoft Office Suite</span>
+        <span class="tag">MS Project</span>
+        <span class="tag">Node.js (Automation)</span>
+        <span class="tag">Google Workspace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Academic Background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-degree">M.Tech</div>
+      <div class="edu-field">Design Engineering</div>
+      <div class="edu-institution">BITS Pilani</div>
+      <div class="edu-year">Birla Institute of Technology &amp; Science</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">B.Tech</div>
+      <div class="edu-field">Chemical Engineering</div>
+      <div class="edu-institution">NIT Surat</div>
+      <div class="edu-year">National Institute of Technology, Surat</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <p class="section-label">Professional Credentials</p>
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-list">
+
+    <div class="cert-item">
+      <div class="cert-icon">PMP</div>
+      <div>
+        <div class="cert-name">Project Management Professional (PMP®)</div>
+        <div class="cert-issuer">Project Management Institute · Nov 2024 – Nov 2027</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">GDA</div>
+      <div>
+        <div class="cert-name">Google Advanced Data Analytics Specialization</div>
+        <div class="cert-issuer">Google · Jan 2026</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">P6</div>
+      <div>
+        <div class="cert-name">Primavera P6 Essential Training</div>
+        <div class="cert-issuer">LinkedIn Learning · Dec 2025</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">BA</div>
+      <div>
+        <div class="cert-name">Business Analysis for Project Managers</div>
+        <div class="cert-issuer">LinkedIn Learning · Nov 2025</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">SML</div>
+      <div>
+        <div class="cert-name">Systems Engineering with SysML</div>
+        <div class="cert-issuer">LinkedIn Learning · Nov 2025</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">PE</div>
+      <div>
+        <div class="cert-name">Talking to AI: Prompt Engineering for Project Managers</div>
+        <div class="cert-issuer">Project Management Institute · Nov 2024</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">AGL</div>
+      <div>
+        <div class="cert-name">Agile Project Management</div>
+        <div class="cert-issuer">Google · Jul 2024</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">GDT</div>
+      <div>
+        <div class="cert-name">Introduction to Geometric Dimensioning &amp; Tolerancing</div>
+        <div class="cert-issuer">LinkedIn Learning · Oct 2023</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">RCA</div>
+      <div>
+        <div class="cert-name">Problem Solving Expert via Root Cause Analysis</div>
+        <div class="cert-issuer">Confederation of Indian Industry · Mar 2022</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">6σ</div>
+      <div>
+        <div class="cert-name">Six Sigma: Green Belt</div>
+        <div class="cert-issuer">LinkedIn Learning · May 2020</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">ASM</div>
+      <div>
+        <div class="cert-name">Aerospace Structures and Materials</div>
+        <div class="cert-issuer">Delft University of Technology · Feb 2020</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">EV</div>
+      <div>
+        <div class="cert-name">Electric Cars: Technology</div>
+        <div class="cert-issuer">Delft University of Technology · Jun 2018</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <p class="section-label">Thought Leadership</p>
+  <h2 class="section-title">LinkedIn Articles</h2>
+  <div class="blog-grid">
+
+    <a class="blog-card" href="https://www.linkedin.com/pulse/from-fast-last-engineering-age-circularity-shubham-yadav-pmp--2m0be/" target="_blank" rel="noopener">
+      <span class="blog-tag">Sustainability · Circular Economy</span>
+      <div class="blog-title">From Fast to Last: Engineering in the Age of Circularity</div>
+      <p class="blog-desc">A perspective on how the automotive and manufacturing industries must rethink product lifecycle — from accelerated obsolescence to circular, end-of-life-aware engineering.</p>
+      <span class="blog-arrow">Read on LinkedIn →</span>
+    </a>
+
+    <a class="blog-card" href="https://www.linkedin.com/pulse/ai-changing-roles-modern-dfmea-shubham-yadav-pmp--potge/" target="_blank" rel="noopener">
+      <span class="blog-tag">AI · Quality Engineering</span>
+      <div class="blog-title">How AI is Changing the Roles in Modern DFMEA</div>
+      <p class="blog-desc">Exploring how artificial intelligence is reshaping Design Failure Mode &amp; Effects Analysis — shifting the engineer's role from data-entry to strategic risk interpretation.</p>
+      <span class="blog-arrow">Read on LinkedIn →</span>
+    </a>
+
+    <a class="blog-card" href="https://www.linkedin.com/pulse/tyre-stiffness-101-lateral-vs-cornering-shubham-yadav-pmp--uxuqe/" target="_blank" rel="noopener">
+      <span class="blog-tag">Tyre Engineering · Vehicle Dynamics</span>
+      <div class="blog-title">Tyre Stiffness 101: Lateral vs. Cornering</div>
+      <p class="blog-desc">A technical breakdown of two commonly conflated tyre properties — lateral stiffness and cornering stiffness — and why the distinction matters in vehicle handling and safety.</p>
+      <span class="blog-arrow">Read on LinkedIn →</span>
+    </a>
+
+    <a class="blog-card" href="https://www.linkedin.com/pulse/driving-edge-avoid-top-5-tyre-mistakes-shubham-yadav-pmp--k5umc/" target="_blank" rel="noopener">
+      <span class="blog-tag">Tyre Engineering · Consumer Insight</span>
+      <div class="blog-title">Driving Edge: Avoid the Top 5 Tyre Mistakes</div>
+      <p class="blog-desc">Practical engineering insight for both vehicle owners and product managers — covering the most costly and common tyre misuse patterns that affect safety, performance, and longevity.</p>
+      <span class="blog-arrow">Read on LinkedIn →</span>
+    </a>
+
+    <a class="blog-card" href="https://www.linkedin.com/pulse/unseen-vibrations-how-your-wheels-secretly-shape-cars-yadav-pmp--zjk0e/" target="_blank" rel="noopener">
+      <span class="blog-tag">NVH · Wheel Dynamics</span>
+      <div class="blog-title">Unseen Vibrations: How Your Wheels Secretly Shape Your Car's Feel</div>
+      <p class="blog-desc">An accessible deep-dive into how wheel imbalance, runout, and vibration modes invisibly influence ride comfort, NVH characteristics, and the overall driving experience.</p>
+      <span class="blog-arrow">Read on LinkedIn →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Let's Connect</p>
+  <h2 class="section-title">Get in Touch</h2>
+  <p class="contact-subtitle">
+    Open to Programme Management, Transformation, and Consulting opportunities across the UK. Connect with me on LinkedIn.
+  </p>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/sy1394/" class="contact-link" target="_blank" rel="noopener">
+      <span class="contact-link-icon">in</span>
+      linkedin.com/in/sy1394
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Shubham Yadav — Programme Manager</span>
+  <span class="footer-note">Leamington Spa, UK · Skilled Worker Visa · Open to Opportunities</span>
+</footer>
+
+<script>
+  /* Intersection Observer for scroll animations */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(
+    '.timeline-item, .skill-group, .edu-card, .cert-item, .blog-card'
+  ).forEach(el => observer.observe(el));
+
+  /* Nav scroll behaviour */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.borderBottomColor = window.scrollY > 80
+      ? 'rgba(200,169,110,0.12)'
+      : 'rgba(255,255,255,0.06)';
+  });
+
+  /* Mobile menu */
+  function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+
+  /* Close nav on link click */
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
