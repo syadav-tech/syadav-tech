@@ -901,6 +901,241 @@
   html.light .timeline::before { background: linear-gradient(to bottom, var(--gold-dim), transparent); }
   html.light .visa-note { background: rgba(138,96,32,0.06); }
 
+  /* ─── PORTFOLIO CAROUSEL ─── */
+  #portfolio { background: var(--bg2); overflow: hidden; }
+
+  .carousel-outer {
+    position: relative;
+    margin: 0 -2rem;
+    padding: 0 2rem;
+  }
+
+  .carousel-track-wrap {
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .proj-card {
+    flex: 0 0 calc(50% - 0.75rem);
+    min-width: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg3);
+    border: 1px solid var(--border-dim);
+    transition: border-color 0.3s;
+    cursor: pointer;
+  }
+
+  .proj-card:hover { border-color: var(--border); }
+
+  @media (max-width: 768px) {
+    .proj-card { flex: 0 0 calc(100% - 0rem); }
+  }
+
+  .proj-card-header {
+    padding: 2rem 2rem 1.25rem;
+    position: relative;
+  }
+
+  .proj-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .proj-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .proj-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .proj-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .proj-stats {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--border-dim);
+    border-bottom: 1px solid var(--border-dim);
+  }
+
+  .proj-stat {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid var(--border-dim);
+  }
+
+  .proj-stat:last-child { border-right: none; }
+
+  .proj-stat-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  .proj-stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .proj-body {
+    padding: 1.25rem 2rem 1.75rem;
+  }
+
+  .proj-phase-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.75rem;
+  }
+
+  .proj-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .proj-phase {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .proj-phase-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold-dim);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    min-width: 1.2rem;
+  }
+
+  .proj-outcomes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .proj-outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .proj-outcome-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+
+  .carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.75rem;
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .carousel-dot {
+    width: 24px; height: 3px;
+    border-radius: 2px;
+    background: var(--border-dim);
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+  }
+
+  .carousel-dot.active {
+    background: var(--gold);
+    width: 40px;
+  }
+
+  .carousel-btns {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .carousel-btn {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border-dim);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .carousel-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  .carousel-auto {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius);
+    transition: color 0.2s;
+  }
+
+  .carousel-auto:hover { color: var(--gold); }
+  .carousel-auto.paused { color: var(--gold-dim); }
+
   /* ─── MOBILE ─── */
   @media (max-width: 768px) {
     .nav-links, .nav-cta { display: none; }
@@ -931,6 +1166,7 @@
   <a href="#hero" class="nav-brand">SY.</a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
@@ -1019,6 +1255,113 @@
           <div class="stat-number">6–10</div>
           <div class="stat-label">OEM brands served simultaneously</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="section-label">Case Studies</p>
+  <h2 class="section-title">Project Portfolio</h2>
+
+  <div class="carousel-outer">
+    <div class="carousel-track-wrap">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- Card 1 -->
+        <div class="proj-card">
+          <div class="proj-card-header">
+            <div class="proj-accent" style="background: linear-gradient(to right, #c8a96e, #8a6e3e, transparent);"></div>
+            <div class="proj-org">JK Tyre &amp; Industries · Product Engineering</div>
+            <div class="proj-title">High-Volume<br><em>Product Delivery</em></div>
+            <p class="proj-subtitle">Spearheaded end-to-end design validation and stakeholder orchestration for India's largest-selling automotive hatchback platform — from RFQ to mass production.</p>
+          </div>
+          <div class="proj-stats">
+            <div class="proj-stat"><div class="proj-stat-num">50k+</div><div class="proj-stat-label">Units / Month</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">100%</div><div class="proj-stat-label">OEM Alignment</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">10+</div><div class="proj-stat-label">Team Members</div></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-phase-title">Strategic Execution</div>
+            <div class="proj-phases">
+              <div class="proj-phase"><span class="proj-phase-num">01</span>Interpreted complex RFQs into actionable technical milestones and KPIs.</div>
+              <div class="proj-phase"><span class="proj-phase-num">02</span>Directed cradle-to-grave programme lifecycle: budgeting, DVP, and homologation.</div>
+              <div class="proj-phase"><span class="proj-phase-num">03</span>Orchestrated 10+ cross-functional members across R&amp;D, Sales, and Production.</div>
+            </div>
+            <div class="proj-phase-title">Value Delivered</div>
+            <div class="proj-outcomes">
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Achieved full alignment with OEM technical and commercial performance targets.</div>
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Secured product launch approval and integrated into a ~50,000 units/month pipeline.</div>
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Implemented NPI discipline that improved delivery speed and documentation accuracy.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="proj-card">
+          <div class="proj-card-header">
+            <div class="proj-accent" style="background: linear-gradient(to right, #a87840, #c8a96e, transparent);"></div>
+            <div class="proj-org">JK Tyre &amp; Industries · Change Management</div>
+            <div class="proj-title">Change Management<br><em>&amp; ROI Delivery</em></div>
+            <p class="proj-subtitle">Streamlined fragmented product lines and upgraded legacy SKUs to a Strategic Target State — achieving a 50% efficiency gain with zero capital tooling investment.</p>
+          </div>
+          <div class="proj-stats">
+            <div class="proj-stat"><div class="proj-stat-num">50%</div><div class="proj-stat-label">Efficiency Gain</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">Zero</div><div class="proj-stat-label">Tooling Cost</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">4</div><div class="proj-stat-label">Readiness Gates</div></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-phase-title">The Problem</div>
+            <div class="proj-phases">
+              <div class="proj-phase"><span class="proj-phase-num">—</span>Fragmented legacy material lineups causing massive machine downtime and complex changeover procedures across the plant floor.</div>
+            </div>
+            <div class="proj-phase-title">Strategic Solutioning</div>
+            <div class="proj-outcomes">
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Unified material strategy — secured cross-functional buy-in from Production, QA, and R&amp;D for a single-source lineup.</div>
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Legacy modernisation — upgraded old SKUs to modern performance standards without hardware changes.</div>
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Eliminated redundant changeovers, reduced machine downtime by 50%, with zero CapEx spend.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="proj-card">
+          <div class="proj-card-header">
+            <div class="proj-accent" style="background: linear-gradient(to right, #8a6e3e, #c8a96e, transparent);"></div>
+            <div class="proj-org">Jaguar Land Rover · Systems Engineering</div>
+            <div class="proj-title">Requirements<br><em>Standardisation Programme</em></div>
+            <p class="proj-subtitle">Driving end-to-end requirements generation and standardisation across JLR vehicle systems — ensuring full traceability from customer need through to validation sign-off within the V-Model framework.</p>
+          </div>
+          <div class="proj-stats">
+            <div class="proj-stat"><div class="proj-stat-num">V-Model</div><div class="proj-stat-label">Methodology</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">Multi</div><div class="proj-stat-label">System Levels</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">2023+</div><div class="proj-stat-label">Ongoing</div></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-phase-title">Scope of Contribution</div>
+            <div class="proj-phases">
+              <div class="proj-phase"><span class="proj-phase-num">01</span>Requirements structured at system, sub-system, and component levels aligned with JLR product development processes.</div>
+              <div class="proj-phase"><span class="proj-phase-num">02</span>Cross-functional stakeholder alignment across engineering, validation, and programme teams.</div>
+              <div class="proj-phase"><span class="proj-phase-num">03</span>Process standardisation and tooling improvement initiatives to reduce downstream quality rework.</div>
+            </div>
+            <div class="proj-phase-title">Key Strengths Demonstrated</div>
+            <div class="proj-outcomes">
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Influence without authority across complex, matrixed OEM environment.</div>
+              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Stage-gate governance and SPOC accountability for requirements traceability.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <div class="carousel-dots" id="carouselDots"></div>
+      <div class="carousel-btns">
+        <button class="carousel-auto" id="autoBtn" onclick="toggleAuto()">⏸ Auto</button>
+        <button class="carousel-btn" onclick="carouselPrev()">&#8592;</button>
+        <button class="carousel-btn" onclick="carouselNext()">&#8594;</button>
       </div>
     </div>
   </div>
@@ -1404,6 +1747,80 @@
     html.classList.toggle('light');
     localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
   });
+
+  /* Carousel */
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dotsEl = document.getElementById('carouselDots');
+    const cards = track.querySelectorAll('.proj-card');
+    const total = cards.length;
+    let cur = 0;
+    let autoInterval = null;
+    let isAuto = true;
+
+    function getVisible() {
+      return window.innerWidth <= 768 ? 1 : 2;
+    }
+
+    function getCardWidth() {
+      const vis = getVisible();
+      const gap = 24;
+      const wrap = track.parentElement;
+      return (wrap.offsetWidth - (gap * (vis - 1))) / vis;
+    }
+
+    function maxIndex() {
+      return total - getVisible();
+    }
+
+    function goTo(index) {
+      cur = Math.max(0, Math.min(index, maxIndex()));
+      const w = getCardWidth();
+      const gap = 24;
+      track.style.transform = `translateX(-${cur * (w + gap)}px)`;
+      renderDots();
+    }
+
+    function renderDots() {
+      const max = maxIndex();
+      dotsEl.innerHTML = '';
+      for (let i = 0; i <= max; i++) {
+        const d = document.createElement('div');
+        d.className = 'carousel-dot' + (i === cur ? ' active' : '');
+        d.onclick = () => { goTo(i); pauseAuto(); };
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function startAuto() {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(() => {
+        cur >= maxIndex() ? goTo(0) : goTo(cur + 1);
+      }, 3500);
+      isAuto = true;
+      const btn = document.getElementById('autoBtn');
+      if (btn) { btn.textContent = '⏸ Auto'; btn.classList.remove('paused'); }
+    }
+
+    function pauseAuto() {
+      clearInterval(autoInterval);
+      autoInterval = null;
+      isAuto = false;
+      const btn = document.getElementById('autoBtn');
+      if (btn) { btn.textContent = '▶ Auto'; btn.classList.add('paused'); }
+    }
+
+    window.carouselNext = () => { goTo(cur >= maxIndex() ? 0 : cur + 1); pauseAuto(); };
+    window.carouselPrev = () => { goTo(cur <= 0 ? maxIndex() : cur - 1); pauseAuto(); };
+    window.toggleAuto  = () => { isAuto ? pauseAuto() : startAuto(); };
+
+    window.addEventListener('resize', () => {
+      goTo(Math.min(cur, maxIndex()));
+    });
+
+    goTo(0);
+    startAuto();
+  })();
 </script>
 </body>
 </html>
