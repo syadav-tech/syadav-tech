@@ -223,7 +223,7 @@
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
     color: var(--gold);
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -341,7 +341,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--text-muted);
     opacity: 0;
     animation: fadeUp 0.8s 1s forwards;
   }
@@ -418,13 +418,14 @@
 
   .stat-card {
     border: 1px solid var(--border-dim);
-    border-radius: var(--radius);
+    border-left: 2px solid var(--gold-dim);
+    border-radius: 0 var(--radius) var(--radius) 0;
     padding: 1.5rem;
-    background: var(--bg3);
+    background: linear-gradient(to right, rgba(200,169,110,0.1), rgba(200,169,110,0));
     transition: border-color 0.3s;
   }
 
-  .stat-card:hover { border-color: var(--border); }
+  .stat-card:hover { border-color: var(--border); border-left-color: var(--gold); }
 
   .stat-number {
     font-family: 'Cormorant Garant', serif;
@@ -439,7 +440,7 @@
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--text-muted);
     line-height: 1.4;
   }
 
@@ -511,7 +512,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--text-muted);
   }
 
   .timeline-role-block {
@@ -693,7 +694,7 @@
   .edu-year {
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
-    color: var(--text-dim);
+    color: var(--text-muted);
   }
 
   /* ─── CERTIFICATIONS ─── */
@@ -744,7 +745,7 @@
 
   .cert-issuer {
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: var(--text-muted);
     letter-spacing: 0.04em;
   }
 
@@ -816,7 +817,7 @@
 
   .footer-note {
     font-size: 0.72rem;
-    color: var(--text-dim);
+    color: var(--text-muted);
     letter-spacing: 0.06em;
   }
 
@@ -911,7 +912,7 @@
   .blog-arrow {
     font-size: 0.78rem;
     letter-spacing: 0.08em;
-    color: var(--text-dim);
+    color: var(--text-muted);
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -1061,7 +1062,7 @@
     font-size: 0.6rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--text-muted);
   }
 
   .proj-body {
@@ -1072,7 +1073,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--text-muted);
     margin-bottom: 0.75rem;
   }
 
@@ -1300,7 +1301,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-number">6</div>
-          <div class="stat-label">Major OTC product launches</div>
+          <div class="stat-label">Major OEM product launches</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">6–10</div>
