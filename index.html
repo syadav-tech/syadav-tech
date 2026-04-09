@@ -702,21 +702,60 @@
 
   .cert-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
   .cert-item {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
     border: 1px solid var(--border-dim);
-    border-radius: var(--radius);
+    border-left: 2px solid var(--gold-dim);
+    border-radius: 0 var(--radius) var(--radius) 0;
     padding: 1.25rem 1.5rem;
-    background: var(--bg3);
+    background: linear-gradient(to right, rgba(200,169,110,0.1), rgba(200,169,110,0));
     opacity: 0;
     transform: translateY(12px);
     transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+    gap: 0.35rem;
+  }
+
+  .cert-item.visible { opacity: 1; transform: translateY(0); }
+  .cert-item:hover { border-color: var(--border); border-left-color: var(--gold); }
+
+  .cert-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    width: auto; height: auto;
+    border-radius: 0;
+    border: none;
+    display: block;
+    justify-content: unset;
+    align-items: unset;
+    flex-shrink: unset;
+  }
+
+  .cert-name {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 0.15rem;
+  }
+
+  .cert-issuer {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 640px) {
+    .cert-list { grid-template-columns: 1fr; }
   }
 
   .cert-item.visible { opacity: 1; transform: translateY(0); }
@@ -1304,7 +1343,7 @@
           <div class="stat-label">Major OEM product launches</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">6–10</div>
+          <div class="stat-number">5</div>
           <div class="stat-label">OEM brands served</div>
         </div>
       </div>
@@ -1327,7 +1366,7 @@
             <div class="proj-accent" style="background: linear-gradient(to right, #c8a96e, #8a6e3e, transparent);"></div>
             <div class="proj-org">JK Tyre &amp; Industries · Product Engineering</div>
             <div class="proj-title">High-Volume<br><em>Product Delivery</em></div>
-            <p class="proj-subtitle">Spearheaded end-to-end design validation and stakeholder orchestration for India's largest-selling automotive hatchback platform — from RFQ to mass production.</p>
+            <p class="proj-subtitle">Spearheaded end-to-end design validation and stakeholder orchestration for a high-volume passenger car platform — from RFQ to mass production.</p>
           </div>
           <div class="proj-stats">
             <div class="proj-stat"><div class="proj-stat-num">50k+</div><div class="proj-stat-label">Units / Month</div></div>
@@ -1649,7 +1688,7 @@
       </div>
     </div>
 
-    <div class="cert-item">
+    <div class="cert-item" style="display:none;">
       <div class="cert-icon">ASM</div>
       <div>
         <div class="cert-name">Aerospace Structures and Materials</div>
@@ -1657,7 +1696,7 @@
       </div>
     </div>
 
-    <div class="cert-item">
+    <div class="cert-item" style="display:none;">
       <div class="cert-icon">EV</div>
       <div>
         <div class="cert-name">Electric Cars: Technology</div>
