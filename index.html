@@ -54,7 +54,6 @@
     overflow-x: hidden;
   }
 
-  /* ─── NOISE OVERLAY ─── */
   body::before {
     content: '';
     position: fixed;
@@ -66,7 +65,6 @@
     opacity: 0.5;
   }
 
-  /* ─── NAV ─── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -125,12 +123,8 @@
     transition: all 0.2s;
   }
 
-  .nav-cta:hover {
-    background: var(--gold);
-    color: #0c0c0c;
-  }
+  .nav-cta:hover { background: var(--gold); color: #0c0c0c; }
 
-  /* ─── HAMBURGER ─── */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -145,7 +139,6 @@
     transition: all 0.3s;
   }
 
-  /* ─── HERO ─── */
   #hero {
     min-height: 100vh;
     display: grid;
@@ -157,10 +150,8 @@
 
   .hero-bg-line {
     position: absolute;
-    right: 8vw;
-    top: 15vh;
-    width: 1px;
-    height: 60vh;
+    right: 8vw; top: 15vh;
+    width: 1px; height: 60vh;
     background: linear-gradient(to bottom, transparent, var(--border), transparent);
   }
 
@@ -198,11 +189,7 @@
     animation: fadeUp 0.8s 0.25s forwards;
   }
 
-  .hero-name em {
-    font-style: italic;
-    color: var(--gold);
-    font-weight: 300;
-  }
+  .hero-name em { font-style: italic; color: var(--gold); font-weight: 300; }
 
   .hero-title {
     font-family: 'Cormorant Garant', serif;
@@ -231,8 +218,7 @@
 
   .typewriter-cursor {
     display: inline-block;
-    width: 0.55em;
-    height: 1em;
+    width: 0.55em; height: 1em;
     background: var(--gold);
     margin-left: 3px;
     vertical-align: middle;
@@ -240,10 +226,7 @@
     border-radius: 1px;
   }
 
-  @keyframes cursorBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+  @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
   .hero-desc {
     font-size: 1rem;
@@ -279,10 +262,7 @@
     background: rgba(255,255,255,0.03);
   }
 
-  .tag.gold {
-    border-color: var(--gold-dim);
-    color: var(--gold);
-  }
+  .tag.gold { border-color: var(--gold-dim); color: var(--gold); }
 
   .hero-actions {
     display: flex;
@@ -328,11 +308,7 @@
     transition: all 0.2s;
   }
 
-  .btn-secondary:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    transform: translateY(-1px);
-  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
 
   .hero-scroll {
     display: flex;
@@ -354,11 +330,7 @@
     transform: scaleX(0);
   }
 
-  /* ─── SECTIONS ─── */
-  section {
-    padding: 7rem max(2rem, 8vw);
-    position: relative;
-  }
+  section { padding: 7rem max(2rem, 8vw); position: relative; }
 
   .section-label {
     font-size: 0.7rem;
@@ -388,7 +360,6 @@
     margin-bottom: 3.5rem;
   }
 
-  /* ─── ABOUT ─── */
   #about { background: var(--bg2); }
 
   .about-grid {
@@ -398,23 +369,10 @@
     align-items: start;
   }
 
-  .about-text p {
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-    line-height: 1.85;
-  }
+  .about-text p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 1rem; line-height: 1.85; }
+  .about-text p strong { color: var(--text); font-weight: 500; }
 
-  .about-text p strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
   .stat-card {
     border: 1px solid var(--border-dim);
@@ -456,13 +414,9 @@
 
   .visa-note strong { color: var(--gold); }
 
-  /* ─── EXPERIENCE ─── */
   #experience { background: var(--bg); }
 
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
+  .timeline { position: relative; padding-left: 2rem; }
 
   .timeline::before {
     content: '';
@@ -484,21 +438,14 @@
 
   .timeline-dot {
     position: absolute;
-    left: -2.4rem;
-    top: 8px;
+    left: -2.4rem; top: 8px;
     width: 9px; height: 9px;
     border-radius: 50%;
     background: var(--gold);
     box-shadow: 0 0 0 3px rgba(200,169,110,0.15);
   }
 
-  .timeline-meta {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-  }
+  .timeline-meta { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
 
   .timeline-date {
     font-size: 0.72rem;
@@ -515,9 +462,7 @@
     color: var(--text-muted);
   }
 
-  .timeline-role-block {
-    margin-bottom: 1rem;
-  }
+  .timeline-role-block { margin-bottom: 1rem; }
 
   .timeline-role {
     font-family: 'Cormorant Garant', serif;
@@ -547,12 +492,7 @@
     font-style: italic;
   }
 
-  .timeline-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
+  .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 
   .timeline-bullets li {
     position: relative;
@@ -562,28 +502,11 @@
     line-height: 1.7;
   }
 
-  .timeline-bullets li::before {
-    content: '–';
-    color: var(--gold-dim);
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+  .timeline-bullets li::before { content: '–'; color: var(--gold-dim); position: absolute; left: 0; top: 0; }
 
+  .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  .timeline-tags .tag { font-size: 0.68rem; padding: 0.2rem 0.65rem; }
 
-  .timeline-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.25rem;
-  }
-
-  .timeline-tags .tag {
-    font-size: 0.68rem;
-    padding: 0.2rem 0.65rem;
-  }
-
-  /* ─── SKILLS ─── */
   #skills { background: var(--bg2); }
 
   .skills-grid {
@@ -619,33 +542,15 @@
     margin-bottom: 1rem;
   }
 
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    justify-content: center;
-  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
+  .skill-tags .tag { font-size: 0.7rem; padding: 0.25rem 0.7rem; }
 
-  .skill-tags .tag {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.7rem;
-  }
+  @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
 
-  @media (max-width: 900px) {
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 560px) {
-    .skills-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ─── EDUCATION ─── */
   #education { background: var(--bg); }
 
-  .edu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
   .edu-card {
     border: 1px solid var(--border-dim);
@@ -670,41 +575,14 @@
     background: linear-gradient(to right, var(--gold-dim), transparent);
   }
 
-  .edu-degree {
-    font-family: 'Cormorant Garant', serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-  }
+  .edu-degree { font-family: 'Cormorant Garant', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.3rem; }
+  .edu-field { font-size: 0.88rem; color: var(--gold); margin-bottom: 0.6rem; }
+  .edu-institution { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .edu-year { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--text-muted); }
 
-  .edu-field {
-    font-size: 0.88rem;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-
-  .edu-institution {
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.4rem;
-  }
-
-  .edu-year {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-  }
-
-  /* ─── CERTIFICATIONS ─── */
   #certifications { background: var(--bg2); }
 
-  .cert-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
+  .cert-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
   .cert-item {
     display: flex;
@@ -731,89 +609,23 @@
     text-transform: uppercase;
     margin-bottom: 0.25rem;
     width: auto; height: auto;
-    border-radius: 0;
-    border: none;
+    border-radius: 0; border: none;
     display: block;
-    justify-content: unset;
-    align-items: unset;
-    flex-shrink: unset;
   }
 
-  .cert-name {
-    font-family: 'Cormorant Garant', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text);
-    line-height: 1.25;
-    margin-bottom: 0.15rem;
-  }
+  .cert-name { font-family: 'Cormorant Garant', serif; font-size: 1.1rem; font-weight: 500; color: var(--text); line-height: 1.25; margin-bottom: 0.15rem; }
+  .cert-issuer { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; }
 
-  .cert-issuer {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-  }
+  @media (max-width: 640px) { .cert-list { grid-template-columns: 1fr; } }
 
-  @media (max-width: 640px) {
-    .cert-list { grid-template-columns: 1fr; }
-  }
-
-  .cert-item.visible { opacity: 1; transform: translateY(0); }
-  .cert-item:hover { border-color: var(--border); }
-
-  .cert-icon {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--gold-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--gold);
-    letter-spacing: 0.04em;
-  }
-
-  .cert-name {
-    font-size: 0.92rem;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-
-  .cert-issuer {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-  }
-
-  /* ─── CONTACT ─── */
-  #contact {
-    background: var(--bg);
-    text-align: center;
-    padding: 8rem max(2rem, 8vw);
-  }
-
+  #contact { background: var(--bg); text-align: center; padding: 8rem max(2rem, 8vw); }
   #contact .section-label { justify-content: center; }
   #contact .section-label::after { display: none; }
   #contact .section-title { margin-bottom: 1rem; }
 
-  .contact-subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    max-width: 480px;
-    margin: 0 auto 3rem;
-    line-height: 1.8;
-  }
+  .contact-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 3rem; line-height: 1.8; }
 
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 4rem;
-  }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 4rem; }
 
   .contact-link {
     display: flex;
@@ -828,16 +640,9 @@
     transition: all 0.2s;
   }
 
-  .contact-link:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
+  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+  .contact-link-icon { font-size: 1rem; }
 
-  .contact-link-icon {
-    font-size: 1rem;
-  }
-
-  /* ─── FOOTER ─── */
   footer {
     border-top: 1px solid var(--border-dim);
     padding: 2rem max(2rem, 8vw);
@@ -848,45 +653,17 @@
     gap: 1rem;
   }
 
-  .footer-name {
-    font-family: 'Cormorant Garant', serif;
-    font-size: 1rem;
-    color: var(--gold);
-  }
+  .footer-name { font-family: 'Cormorant Garant', serif; font-size: 1rem; color: var(--gold); }
+  .footer-note { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
 
-  .footer-note {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    letter-spacing: 0.06em;
-  }
+  .divider { height: 1px; background: var(--border-dim); margin: 3rem 0; }
 
-  /* ─── DIVIDER ─── */
-  .divider {
-    height: 1px;
-    background: var(--border-dim);
-    margin: 3rem 0;
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes expandWidth { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes expandWidth {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-  }
-
-  /* ─── WRITING / BLOGS ─── */
   #writing { background: var(--bg); }
 
-  .blog-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    justify-content: center;
-  }
+  .blog-grid { display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center; }
 
   .blog-card {
     flex: 1 1 300px;
@@ -921,47 +698,13 @@
   .blog-card:hover::before { opacity: 1; }
   .blog-card.visible { opacity: 1; transform: translateY(0); }
 
-  .blog-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-family: 'DM Mono', monospace;
-  }
-
-  .blog-title {
-    font-family: 'Cormorant Garant', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: var(--text);
-    transition: color 0.2s;
-  }
-
+  .blog-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-family: 'DM Mono', monospace; }
+  .blog-title { font-family: 'Cormorant Garant', serif; font-size: 1.2rem; font-weight: 500; line-height: 1.3; color: var(--text); transition: color 0.2s; }
   .blog-card:hover .blog-title { color: var(--gold); }
-
-  .blog-desc {
-    font-size: 0.84rem;
-    color: var(--text-muted);
-    line-height: 1.65;
-    flex: 1;
-  }
-
-  .blog-arrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: color 0.2s;
-  }
-
+  .blog-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+  .blog-arrow { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
   .blog-card:hover .blog-arrow { color: var(--gold); }
 
-  /* ─── THEME TOGGLE ─── */
   .theme-toggle {
     width: 38px; height: 38px;
     border-radius: 50%;
@@ -981,7 +724,6 @@
   .icon-sun  { display: none; }
   html.light .icon-moon { display: none; }
   html.light .icon-sun  { display: block; }
-
   html.light nav { background: rgba(244,241,235,0.92); }
   html.light .nav-links.open { background: rgba(244,241,235,0.98); }
   html.light body::before { opacity: 0.25; }
@@ -992,242 +734,116 @@
   html.light .timeline::before { background: linear-gradient(to bottom, var(--gold-dim), transparent); }
   html.light .visa-note { background: rgba(138,96,32,0.06); }
 
-  /* ─── PORTFOLIO CAROUSEL ─── */
-  #portfolio { background: var(--bg2); overflow: hidden; }
+  /* ─── PORTFOLIO ─── */
+  #portfolio { background: var(--bg2); }
 
-  .carousel-outer {
-    position: relative;
-    margin: 0 -2rem;
-    padding: 0 2rem;
+  .portfolio-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+
+  .filter-btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 2rem;
+    border: 1px solid var(--border-dim);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  .carousel-track-wrap {
-    overflow: hidden;
-    border-radius: var(--radius);
-  }
+  .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .filter-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(200,169,110,0.08); }
 
-  .carousel-track {
-    display: flex;
-    gap: 1.5rem;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-  }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
   .proj-card {
-    flex: 0 0 calc(50% - 0.75rem);
-    min-width: 0;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
     background: var(--bg3);
     border: 1px solid var(--border-dim);
     transition: border-color 0.3s;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
   }
 
   .proj-card:hover { border-color: var(--border); }
+  .proj-card[data-hidden="true"] { display: none; }
 
-  @media (max-width: 768px) {
-    .proj-card { flex: 0 0 calc(100% - 0rem); }
-  }
+  .proj-card-header { padding: 2rem 2rem 1.25rem; position: relative; }
 
-  .proj-card-header {
-    padding: 2rem 2rem 1.25rem;
-    position: relative;
-  }
+  .proj-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
 
-  .proj-accent {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-
-  .proj-org {
+  .cat-badge {
+    display: inline-block;
     font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-
-  .proj-title {
-    font-family: 'Cormorant Garant', serif;
-    font-size: 1.7rem;
-    font-weight: 500;
-    line-height: 1.15;
-    color: var(--text);
+    padding: 3px 9px;
+    border-radius: 2rem;
     margin-bottom: 0.5rem;
   }
 
-  .proj-title em {
-    color: var(--gold);
-    font-style: italic;
-  }
+  .cat-pm { background: rgba(200,169,110,0.12); color: var(--gold); }
+  .cat-data { background: rgba(93,202,165,0.1); color: #5dcaa5; }
+  html.light .cat-data { background: rgba(15,110,86,0.1); color: #0f6e56; }
 
-  .proj-subtitle {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.65;
-    margin-bottom: 1.25rem;
-  }
+  .proj-org { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
 
-  .proj-stats {
-    display: flex;
-    gap: 0;
-    border-top: 1px solid var(--border-dim);
-    border-bottom: 1px solid var(--border-dim);
-  }
+  .proj-title { font-family: 'Cormorant Garant', serif; font-size: 1.7rem; font-weight: 500; line-height: 1.15; color: var(--text); margin-bottom: 0.5rem; }
+  .proj-title em { color: var(--gold); font-style: italic; }
 
-  .proj-stat {
-    flex: 1;
-    padding: 1rem;
-    text-align: center;
-    border-right: 1px solid var(--border-dim);
-  }
+  .proj-subtitle { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; }
 
+  .proj-stats { display: flex; gap: 0; border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim); }
+
+  .proj-stat { flex: 1; padding: 1rem; text-align: center; border-right: 1px solid var(--border-dim); }
   .proj-stat:last-child { border-right: none; }
 
-  .proj-stat-num {
-    font-family: 'Cormorant Garant', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 0.2rem;
-  }
+  .proj-stat-num { font-family: 'Cormorant Garant', serif; font-size: 1.6rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.2rem; }
+  .proj-stat-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 
-  .proj-stat-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
+  .proj-body { padding: 1.25rem 2rem 1.75rem; flex: 1; }
+
+  .proj-phase-title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
+
+  .proj-phases { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+
+  .proj-phase { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
+
+  .proj-phase-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--gold-dim); flex-shrink: 0; margin-top: 0.1rem; min-width: 1.2rem; }
+
+  .proj-outcomes { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .proj-outcome { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+  .proj-outcome-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0; margin-top: 0.45rem; }
+
+  .proj-card-links { display: flex; gap: 0.5rem; padding: 0.75rem 1.5rem; border-top: 1px solid var(--border-dim); margin-top: auto; }
+
+  .proj-card-link {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  .proj-body {
-    padding: 1.25rem 2rem 1.75rem;
-  }
-
-  .proj-phase-title {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-  }
-
-  .proj-phases {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .proj-phase {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 0.84rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .proj-phase-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--gold-dim);
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-    min-width: 1.2rem;
-  }
-
-  .proj-outcomes {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .proj-outcome {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.65rem;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .proj-outcome-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--gold-dim);
-    flex-shrink: 0;
-    margin-top: 0.45rem;
-  }
-
-  .carousel-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.75rem;
-  }
-
-  .carousel-dots {
-    display: flex;
-    gap: 8px;
-  }
-
-  .carousel-dot {
-    width: 24px; height: 3px;
-    border-radius: 2px;
-    background: var(--border-dim);
-    cursor: pointer;
-    transition: background 0.3s, width 0.3s;
-  }
-
-  .carousel-dot.active {
-    background: var(--gold);
-    width: 40px;
-  }
-
-  .carousel-btns {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-  }
-
-  .carousel-btn {
-    width: 38px; height: 38px;
-    border-radius: 50%;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
     border: 1px solid var(--border-dim);
-    background: transparent;
     color: var(--text-muted);
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: border-color 0.2s, color 0.2s;
+    text-decoration: none;
+    transition: all 0.2s;
   }
 
-  .carousel-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .proj-card-link:hover { border-color: var(--border); color: var(--text); }
+  .proj-card-link.live { border-color: rgba(93,202,165,0.35); color: #5dcaa5; }
+  .proj-card-link.live:hover { background: rgba(93,202,165,0.08); }
+  html.light .proj-card-link.live { border-color: rgba(15,110,86,0.35); color: #0f6e56; }
 
-  .carousel-auto {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    padding: 0.3rem 0.6rem;
-    border-radius: var(--radius);
-    transition: color 0.2s;
-  }
+  @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
-  .carousel-auto:hover { color: var(--gold); }
-  .carousel-auto.paused { color: var(--gold-dim); }
-
-  /* ─── MOBILE ─── */
   @media (max-width: 768px) {
     .nav-links, .nav-cta { display: none; }
     .hamburger { display: flex; }
@@ -1356,77 +972,137 @@
   <p class="section-label">Case Studies</p>
   <h2 class="section-title">Project Portfolio</h2>
 
-  <div class="carousel-outer">
-    <div class="carousel-track-wrap">
-      <div class="carousel-track" id="carouselTrack">
+  <div class="portfolio-filters">
+    <button class="filter-btn active" onclick="portfolioFilter('all', this)">All</button>
+    <button class="filter-btn" onclick="portfolioFilter('pm', this)">Programme Delivery</button>
+    <button class="filter-btn" onclick="portfolioFilter('data', this)">Data &amp; Analytics</button>
+  </div>
 
-        <!-- Card 1 -->
-        <div class="proj-card">
-          <div class="proj-card-header">
-            <div class="proj-accent" style="background: linear-gradient(to right, #c8a96e, #8a6e3e, transparent);"></div>
-            <div class="proj-org">JK Tyre &amp; Industries · Product Engineering</div>
-            <div class="proj-title">High-Volume<br><em>Product Delivery</em></div>
-            <p class="proj-subtitle">Spearheaded end-to-end design validation and stakeholder orchestration for a high-volume passenger car platform — from RFQ to mass production.</p>
-          </div>
-          <div class="proj-stats">
-            <div class="proj-stat"><div class="proj-stat-num">50k+</div><div class="proj-stat-label">Units / Month</div></div>
-            <div class="proj-stat"><div class="proj-stat-num">100%</div><div class="proj-stat-label">OEM Alignment</div></div>
-            <div class="proj-stat"><div class="proj-stat-num">10+</div><div class="proj-stat-label">Team Members</div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-phase-title">Strategic Execution</div>
-            <div class="proj-phases">
-              <div class="proj-phase"><span class="proj-phase-num">01</span>Interpreted complex RFQs into actionable technical milestones and KPIs.</div>
-              <div class="proj-phase"><span class="proj-phase-num">02</span>Directed cradle-to-grave programme lifecycle: budgeting, DVP, and homologation.</div>
-              <div class="proj-phase"><span class="proj-phase-num">03</span>Orchestrated 10+ cross-functional members across R&amp;D, Sales, and Production.</div>
-            </div>
-            <div class="proj-phase-title">Value Delivered</div>
-            <div class="proj-outcomes">
-              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Achieved full alignment with OEM technical and commercial performance targets.</div>
-              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Secured product launch approval and integrated into a ~50,000 units/month pipeline.</div>
-              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Implemented NPI discipline that improved delivery speed and documentation accuracy.</div>
-            </div>
-          </div>
+  <div class="portfolio-grid" id="portfolioGrid">
+
+    <!-- PM Card 1 -->
+    <div class="proj-card" data-cat="pm">
+      <div class="proj-card-header">
+        <div class="proj-accent" style="background: linear-gradient(to right, #c8a96e, #8a6e3e, transparent);"></div>
+        <span class="cat-badge cat-pm">Programme Delivery</span>
+        <div class="proj-org">JK Tyre &amp; Industries · Product Engineering</div>
+        <div class="proj-title">High-Volume<br><em>Product Delivery</em></div>
+        <p class="proj-subtitle">Spearheaded end-to-end design validation and stakeholder orchestration for a high-volume passenger car platform — from RFQ to mass production.</p>
+      </div>
+      <div class="proj-stats">
+        <div class="proj-stat"><div class="proj-stat-num">50k+</div><div class="proj-stat-label">Units / Month</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">100%</div><div class="proj-stat-label">OEM Alignment</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">10+</div><div class="proj-stat-label">Team Members</div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-phase-title">Strategic Execution</div>
+        <div class="proj-phases">
+          <div class="proj-phase"><span class="proj-phase-num">01</span>Interpreted complex RFQs into actionable technical milestones and KPIs.</div>
+          <div class="proj-phase"><span class="proj-phase-num">02</span>Directed cradle-to-grave programme lifecycle: budgeting, DVP, and homologation.</div>
+          <div class="proj-phase"><span class="proj-phase-num">03</span>Orchestrated 10+ cross-functional members across R&amp;D, Sales, and Production.</div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="proj-card">
-          <div class="proj-card-header">
-            <div class="proj-accent" style="background: linear-gradient(to right, #a87840, #c8a96e, transparent);"></div>
-            <div class="proj-org">JK Tyre &amp; Industries · Change Management</div>
-            <div class="proj-title">Change Management<br><em>&amp; ROI Delivery</em></div>
-            <p class="proj-subtitle">Streamlined fragmented product lines and upgraded legacy SKUs to a Strategic Target State — achieving a 50% efficiency gain with zero capital tooling investment.</p>
-          </div>
-          <div class="proj-stats">
-            <div class="proj-stat"><div class="proj-stat-num">50%</div><div class="proj-stat-label">Efficiency Gain</div></div>
-            <div class="proj-stat"><div class="proj-stat-num">Zero</div><div class="proj-stat-label">Tooling Cost</div></div>
-            <div class="proj-stat"><div class="proj-stat-num">4</div><div class="proj-stat-label">Readiness Gates</div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-phase-title">The Problem</div>
-            <div class="proj-phases">
-              <div class="proj-phase"><span class="proj-phase-num">—</span>Fragmented legacy material lineups causing massive machine downtime and complex changeover procedures across the plant floor.</div>
-            </div>
-            <div class="proj-phase-title">Strategic Solutioning</div>
-            <div class="proj-outcomes">
-              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Unified material strategy — secured cross-functional buy-in from Production, QA, and R&amp;D for a single-source lineup.</div>
-              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Legacy modernisation — upgraded old SKUs to modern performance standards without hardware changes.</div>
-              <div class="proj-outcome"><span class="proj-outcome-dot"></span>Eliminated redundant changeovers, reduced machine downtime by 50%, with zero CapEx spend.</div>
-            </div>
-          </div>
+        <div class="proj-phase-title">Value Delivered</div>
+        <div class="proj-outcomes">
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Achieved full alignment with OEM technical and commercial performance targets.</div>
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Secured product launch approval and integrated into a ~50,000 units/month pipeline.</div>
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Implemented NPI discipline that improved delivery speed and documentation accuracy.</div>
         </div>
-
       </div>
     </div>
 
-    <div class="carousel-nav">
-      <div class="carousel-dots" id="carouselDots"></div>
-      <div class="carousel-btns">
-        <button class="carousel-auto" id="autoBtn" onclick="toggleAuto()">⏸ Auto</button>
-        <button class="carousel-btn" onclick="carouselPrev()">&#8592;</button>
-        <button class="carousel-btn" onclick="carouselNext()">&#8594;</button>
+    <!-- PM Card 2 -->
+    <div class="proj-card" data-cat="pm">
+      <div class="proj-card-header">
+        <div class="proj-accent" style="background: linear-gradient(to right, #a87840, #c8a96e, transparent);"></div>
+        <span class="cat-badge cat-pm">Programme Delivery</span>
+        <div class="proj-org">JK Tyre &amp; Industries · Change Management</div>
+        <div class="proj-title">Change Management<br><em>&amp; ROI Delivery</em></div>
+        <p class="proj-subtitle">Streamlined fragmented product lines and upgraded legacy SKUs to a Strategic Target State — achieving a 50% efficiency gain with zero capital tooling investment.</p>
+      </div>
+      <div class="proj-stats">
+        <div class="proj-stat"><div class="proj-stat-num">50%</div><div class="proj-stat-label">Efficiency Gain</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">Zero</div><div class="proj-stat-label">Tooling Cost</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">4</div><div class="proj-stat-label">Readiness Gates</div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-phase-title">The Problem</div>
+        <div class="proj-phases">
+          <div class="proj-phase"><span class="proj-phase-num">—</span>Fragmented legacy material lineups causing massive machine downtime and complex changeover procedures across the plant floor.</div>
+        </div>
+        <div class="proj-phase-title">Strategic Solutioning</div>
+        <div class="proj-outcomes">
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Unified material strategy — secured cross-functional buy-in from Production, QA, and R&amp;D for a single-source lineup.</div>
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Legacy modernisation — upgraded old SKUs to modern performance standards without hardware changes.</div>
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Eliminated redundant changeovers, reduced machine downtime by 50%, with zero CapEx spend.</div>
+        </div>
       </div>
     </div>
+
+    <!-- Data Card 1 -->
+    <div class="proj-card" data-cat="data">
+      <div class="proj-card-header">
+        <div class="proj-accent" style="background: linear-gradient(to right, #5dcaa5, #1d9e75, transparent);"></div>
+        <span class="cat-badge cat-data">Data &amp; Analytics</span>
+        <div class="proj-org">Python · EDA · Automotive</div>
+        <div class="proj-title">EMV Warranty<br><em>Analytics</em></div>
+        <p class="proj-subtitle">Automotive warranty cost intelligence using the PACE framework — exploratory data analysis surfacing failure patterns and cost drivers across electric vehicle components.</p>
+      </div>
+      <div class="proj-stats">
+        <div class="proj-stat"><div class="proj-stat-num">PACE</div><div class="proj-stat-label">Framework</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">Python</div><div class="proj-stat-label">EDA</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">EV</div><div class="proj-stat-label">Automotive</div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-phase-title">Scope</div>
+        <div class="proj-phases">
+          <div class="proj-phase"><span class="proj-phase-num">01</span>Cleaned and structured synthetic warranty dataset using Python and Pandas.</div>
+          <div class="proj-phase"><span class="proj-phase-num">02</span>Applied PACE framework to structure the end-to-end analytical workflow.</div>
+          <div class="proj-phase"><span class="proj-phase-num">03</span>Identified cost drivers and failure clusters across EV component categories.</div>
+        </div>
+        <div class="proj-phase-title">Tools Used</div>
+        <div class="proj-outcomes">
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Python · Pandas · Matplotlib · Seaborn · Jupyter Notebook</div>
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Google Advanced Data Analytics (PACE) methodology.</div>
+        </div>
+      </div>
+      <div class="proj-card-links">
+        <a class="proj-card-link" href="https://github.com/syadav-tech/EMV-Warranty-Analytics" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- Data Card 2 -->
+    <div class="proj-card" data-cat="data">
+      <div class="proj-card-header">
+        <div class="proj-accent" style="background: linear-gradient(to right, #1d9e75, #5dcaa5, transparent);"></div>
+        <span class="cat-badge cat-data">Data &amp; Analytics</span>
+        <div class="proj-org">Python · ML · Financial Services</div>
+        <div class="proj-title">Credit Risk<br><em>Model</em></div>
+        <p class="proj-subtitle">End-to-end credit risk classification model with a live interactive Streamlit dashboard — built to demonstrate analytical and ML capability for financial services roles.</p>
+      </div>
+      <div class="proj-stats">
+        <div class="proj-stat"><div class="proj-stat-num">ML</div><div class="proj-stat-label">Classification</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">Live</div><div class="proj-stat-label">Streamlit App</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">FinServ</div><div class="proj-stat-label">Domain</div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-phase-title">Scope</div>
+        <div class="proj-phases">
+          <div class="proj-phase"><span class="proj-phase-num">01</span>Built a binary classification model to predict credit default risk from financial features.</div>
+          <div class="proj-phase"><span class="proj-phase-num">02</span>Deployed a live interactive Streamlit app for real-time risk scoring.</div>
+          <div class="proj-phase"><span class="proj-phase-num">03</span>Demonstrates end-to-end ML pipeline from data prep through model evaluation.</div>
+        </div>
+        <div class="proj-phase-title">Tools Used</div>
+        <div class="proj-outcomes">
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Python · Scikit-learn · Pandas · Streamlit · GitHub</div>
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Relevant to credit risk, operational analytics, and FinServ transformation roles.</div>
+        </div>
+      </div>
+      <div class="proj-card-links">
+        <a class="proj-card-link live" href="https://credit-risk-project-h4bger8hnwq7caw6a2bmy5.streamlit.app/" target="_blank" rel="noopener">Live App ↗</a>
+        <a class="proj-card-link" href="https://github.com/syadav-tech/Credit-Risk_Project" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1773,7 +1449,6 @@
 </footer>
 
 <script>
-  /* Intersection Observer for scroll animations */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -1787,7 +1462,6 @@
     '.timeline-item, .skill-group, .edu-card, .cert-item, .blog-card'
   ).forEach(el => observer.observe(el));
 
-  /* Nav scroll behaviour */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.style.borderBottomColor = window.scrollY > 80
@@ -1795,19 +1469,16 @@
       : 'rgba(255,255,255,0.06)';
   });
 
-  /* Mobile menu */
   function toggleMenu() {
     document.getElementById('nav-links').classList.toggle('open');
   }
 
-  /* Close nav on link click */
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
       document.getElementById('nav-links').classList.remove('open');
     });
   });
 
-  /* Theme toggle */
   const html = document.documentElement;
   const saved = localStorage.getItem('theme');
   if (saved === 'light') html.classList.add('light');
@@ -1817,80 +1488,14 @@
     localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
   });
 
-  /* Carousel */
-  (function() {
-    const track = document.getElementById('carouselTrack');
-    const dotsEl = document.getElementById('carouselDots');
-    const cards = track.querySelectorAll('.proj-card');
-    const total = cards.length;
-    let cur = 0;
-    let autoInterval = null;
-    let isAuto = true;
-
-    function getVisible() {
-      return window.innerWidth <= 768 ? 1 : 2;
-    }
-
-    function getCardWidth() {
-      const vis = getVisible();
-      const gap = 24;
-      const wrap = track.parentElement;
-      return (wrap.offsetWidth - (gap * (vis - 1))) / vis;
-    }
-
-    function maxIndex() {
-      return total - getVisible();
-    }
-
-    function goTo(index) {
-      cur = Math.max(0, Math.min(index, maxIndex()));
-      const w = getCardWidth();
-      const gap = 24;
-      track.style.transform = `translateX(-${cur * (w + gap)}px)`;
-      renderDots();
-    }
-
-    function renderDots() {
-      const max = maxIndex();
-      dotsEl.innerHTML = '';
-      for (let i = 0; i <= max; i++) {
-        const d = document.createElement('div');
-        d.className = 'carousel-dot' + (i === cur ? ' active' : '');
-        d.onclick = () => { goTo(i); pauseAuto(); };
-        dotsEl.appendChild(d);
-      }
-    }
-
-    function startAuto() {
-      if (autoInterval) clearInterval(autoInterval);
-      autoInterval = setInterval(() => {
-        cur >= maxIndex() ? goTo(0) : goTo(cur + 1);
-      }, 3500);
-      isAuto = true;
-      const btn = document.getElementById('autoBtn');
-      if (btn) { btn.textContent = '⏸ Auto'; btn.classList.remove('paused'); }
-    }
-
-    function pauseAuto() {
-      clearInterval(autoInterval);
-      autoInterval = null;
-      isAuto = false;
-      const btn = document.getElementById('autoBtn');
-      if (btn) { btn.textContent = '▶ Auto'; btn.classList.add('paused'); }
-    }
-
-    window.carouselNext = () => { goTo(cur >= maxIndex() ? 0 : cur + 1); pauseAuto(); };
-    window.carouselPrev = () => { goTo(cur <= 0 ? maxIndex() : cur - 1); pauseAuto(); };
-    window.toggleAuto  = () => { isAuto ? pauseAuto() : startAuto(); };
-
-    window.addEventListener('resize', () => {
-      goTo(Math.min(cur, maxIndex()));
+  window.portfolioFilter = function(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#portfolioGrid .proj-card').forEach(card => {
+      card.dataset.hidden = (cat !== 'all' && card.dataset.cat !== cat) ? 'true' : 'false';
     });
+  };
 
-    goTo(0);
-    startAuto();
-  })();
-  /* Typewriter */
   (function() {
     const titles = [
       'Delivery & Transformation Manager',
