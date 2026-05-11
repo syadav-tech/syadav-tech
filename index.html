@@ -1105,7 +1105,41 @@
         <a class="proj-card-link" href="https://github.com/syadav-tech/Credit-Risk_Project" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
-
+    <!-- Data Card 3 -->
+    <div class="proj-card" data-cat="data">
+      <div class="proj-card-header">
+        <div class="proj-accent" style="background: linear-gradient(to right, #5dcaa5, #1d9e75, transparent);"></div>
+        <span class="cat-badge cat-data">Data &amp; Analytics</span>
+        <div class="proj-org">Python · XGBoost · Financial Services</div>
+        <div class="proj-title">FraudGuard<br><em>Transaction Fraud Intelligence</em></div>
+        <p class="proj-subtitle">ML-powered fraud detection system built on 590,540 IEEE-CIS payment records — engineered to address the Fraud-Friction trade-off facing every retail banking operations team.</p>
+      </div>
+      <div class="proj-stats">
+        <div class="proj-stat"><div class="proj-stat-num">590k+</div><div class="proj-stat-label">Transactions</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">0.896</div><div class="proj-stat-label">ROC-AUC</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">59.6%</div><div class="proj-stat-label">Fraud Caught</div></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-phase-title">Scope</div>
+        <div class="proj-phases">
+          <div class="proj-phase"><span class="proj-phase-num">01</span>EDA on 3.5% fraud rate dataset — 205 binary missingness indicators engineered as signal features.</div>
+          <div class="proj-phase"><span class="proj-phase-num">02</span>XGBoost with SMOTE resampling and time-based train/test split to prevent data leakage.</div>
+          <div class="proj-phase"><span class="proj-phase-num">03</span>Threshold tuned via F-beta (0.143 optimal) — exposing the Fraud-Friction trade-off explicitly rather than hiding it behind a single accuracy metric.</div>
+        </div>
+        <div class="proj-phase-title">Key Finding</div>
+        <div class="proj-outcomes" style="margin-bottom: 1.25rem;">
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>CNP transactions carry 11.7% fraud rate — 3.3× the portfolio average — with credit cards 2.8× riskier than debit. SHAP analysis reveals anonymised count features outperform transaction amount as fraud signals.</div>
+        </div>
+        <div class="proj-phase-title">Tools Used</div>
+        <div class="proj-outcomes">
+          <div class="proj-outcome"><span class="proj-outcome-dot"></span>Python · XGBoost · SMOTE · SHAP · Streamlit · Plotly · Pandas</div>
+        </div>
+      </div>
+      <div class="proj-card-links">
+        <a class="proj-card-link live" href="https://fraudguard-cbsatymzduhsdugbazz54h.streamlit.app/" target="_blank" rel="noopener">Live App ↗</a>
+        <a class="proj-card-link" href="https://github.com/syadav-tech/FraudGuard" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
   </div>
 </section>
 
