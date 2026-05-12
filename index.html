@@ -741,108 +741,70 @@
 
   .filter-btn {
     font-family: 'Outfit', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.45rem 1.1rem;
-    border-radius: 2rem;
-    border: 1px solid var(--border-dim);
-    background: transparent;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: all 0.2s;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.45rem 1.1rem; border-radius: 2rem;
+    border: 1px solid var(--border-dim); background: transparent;
+    color: var(--text-muted); cursor: pointer; transition: all 0.2s;
   }
 
   .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
   .filter-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(200,169,110,0.08); }
 
-  .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .portfolio-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    min-height: 200px;
+  }
 
-  .proj-card {
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    background: var(--bg3);
-    border: 1px solid var(--border-dim);
-    transition: border-color 0.3s;
+  .portfolio-track .proj-card { display: none; }
+  .portfolio-track .proj-card.p-active { display: flex; }
+
+  .portfolio-nav {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.75rem;
   }
 
+  .proj-card { border-radius: 10px; overflow: hidden; position: relative; background: var(--bg3); border: 1px solid var(--border-dim); transition: border-color 0.3s; display: flex; flex-direction: column; }
   .proj-card:hover { border-color: var(--border); }
-  .proj-card[data-hidden="true"] { display: none; }
-
   .proj-card-header { padding: 2rem 2rem 1.25rem; position: relative; }
-
   .proj-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-
-  .cat-badge {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 2rem;
-    margin-bottom: 0.5rem;
-  }
-
+  .cat-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 2rem; margin-bottom: 0.5rem; }
   .cat-pm { background: rgba(200,169,110,0.12); color: var(--gold); }
   .cat-data { background: rgba(93,202,165,0.1); color: #5dcaa5; }
   html.light .cat-data { background: rgba(15,110,86,0.1); color: #0f6e56; }
-
   .proj-org { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-
   .proj-title { font-family: 'Cormorant Garant', serif; font-size: 1.7rem; font-weight: 500; line-height: 1.15; color: var(--text); margin-bottom: 0.5rem; }
   .proj-title em { color: var(--gold); font-style: italic; }
-
   .proj-subtitle { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; }
-
   .proj-stats { display: flex; gap: 0; border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim); }
-
   .proj-stat { flex: 1; padding: 1rem; text-align: center; border-right: 1px solid var(--border-dim); }
   .proj-stat:last-child { border-right: none; }
-
   .proj-stat-num { font-family: 'Cormorant Garant', serif; font-size: 1.6rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.2rem; }
   .proj-stat-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
-
   .proj-body { padding: 1.25rem 2rem 1.75rem; flex: 1; }
-
   .proj-phase-title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
-
   .proj-phases { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
-
   .proj-phase { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
-
   .proj-phase-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--gold-dim); flex-shrink: 0; margin-top: 0.1rem; min-width: 1.2rem; }
-
   .proj-outcomes { display: flex; flex-direction: column; gap: 0.5rem; }
-
   .proj-outcome { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
-
   .proj-outcome-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0; margin-top: 0.45rem; }
-
   .proj-card-links { display: flex; gap: 0.5rem; padding: 0.75rem 1.5rem; border-top: 1px solid var(--border-dim); margin-top: auto; }
-
-  .proj-card-link {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    border: 1px solid var(--border-dim);
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
+  .proj-card-link { font-family: 'Outfit', sans-serif; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 4px; border: 1px solid var(--border-dim); color: var(--text-muted); text-decoration: none; transition: all 0.2s; }
   .proj-card-link:hover { border-color: var(--border); color: var(--text); }
   .proj-card-link.live { border-color: rgba(93,202,165,0.35); color: #5dcaa5; }
   .proj-card-link.live:hover { background: rgba(93,202,165,0.08); }
   html.light .proj-card-link.live { border-color: rgba(15,110,86,0.35); color: #0f6e56; }
 
-  @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } }
+  .carousel-dots { display: flex; gap: 8px; }
+  .carousel-dot { width: 24px; height: 3px; border-radius: 2px; background: var(--border-dim); cursor: pointer; transition: background 0.3s, width 0.3s; }
+  .carousel-dot.active { background: var(--gold); width: 40px; }
+  .carousel-btns { display: flex; gap: 0.6rem; }
+  .carousel-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border-dim); background: transparent; color: var(--text-muted); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+  .carousel-btn:hover { border-color: var(--gold); color: var(--gold); }
 
   @media (max-width: 768px) {
     .nav-links, .nav-cta { display: none; }
@@ -978,7 +940,7 @@
     <button class="filter-btn" onclick="portfolioFilter('data', this)">Data &amp; Analytics</button>
   </div>
 
-  <div class="portfolio-grid" id="portfolioGrid">
+  <div class="portfolio-track" id="portfolioTrack">
 
     <!-- PM Card 1 -->
     <div class="proj-card" data-cat="pm">
@@ -1140,9 +1102,21 @@
         <a class="proj-card-link" href="https://github.com/syadav-tech/FraudGuard" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
+    
   </div>
-</section>
 
+  </div>
+
+  <div class="portfolio-nav">
+    <div class="carousel-dots" id="portfolioDots"></div>
+    <div class="carousel-btns">
+      <button class="carousel-btn" onclick="portfolioPrev()">&#8592;</button>
+      <button class="carousel-btn" onclick="portfolioNext()">&#8594;</button>
+    </div>
+  </div>
+
+</section>
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-label">Career</p>
@@ -1525,13 +1499,60 @@
     localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
   });
 
-  window.portfolioFilter = function(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('#portfolioGrid .proj-card').forEach(card => {
-      card.dataset.hidden = (cat !== 'all' && card.dataset.cat !== cat) ? 'true' : 'false';
-    });
-  };
+  window.portfolioFilter = (function() {
+    const PER_PAGE = 2;
+    let filter = 'all';
+    let page = 0;
+
+    function cards() {
+      return [...document.querySelectorAll('#portfolioTrack .proj-card')];
+    }
+
+    function filtered() {
+      return cards().filter(c => filter === 'all' || c.dataset.cat === filter);
+    }
+
+    function render() {
+      const vis = filtered();
+      const pages = Math.ceil(vis.length / PER_PAGE);
+      if (page >= pages) page = 0;
+
+      cards().forEach(c => c.classList.remove('p-active'));
+      vis.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE)
+         .forEach(c => c.classList.add('p-active'));
+
+      const dotsEl = document.getElementById('portfolioDots');
+      dotsEl.innerHTML = '';
+      for (let i = 0; i < pages; i++) {
+        const d = document.createElement('div');
+        d.className = 'carousel-dot' + (i === page ? ' active' : '');
+        d.onclick = () => { page = i; render(); };
+        dotsEl.appendChild(d);
+      }
+    }
+
+    window.portfolioFilter = function(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filter = cat;
+      page = 0;
+      render();
+    };
+
+    window.portfolioNext = function() {
+      const pages = Math.ceil(filtered().length / PER_PAGE);
+      page = (page + 1) % pages;
+      render();
+    };
+
+    window.portfolioPrev = function() {
+      const pages = Math.ceil(filtered().length / PER_PAGE);
+      page = (page - 1 + pages) % pages;
+      render();
+    };
+
+    render();
+  })();
 
   (function() {
     const titles = [
@@ -1543,7 +1564,6 @@
     const el = document.getElementById('typewriterText');
     let ti = 0, ci = 0, deleting = false;
     const typeSpeed = 60, deleteSpeed = 35, pauseAfter = 1800, pauseBefore = 320;
-
     function tick() {
       const current = titles[ti];
       if (!deleting) {
@@ -1554,22 +1574,6 @@
           setTimeout(tick, pauseAfter);
           return;
         }
-        setTimeout(tick, typeSpeed);
-      } else {
-        el.textContent = current.slice(0, ci - 1);
-        ci--;
-        if (ci === 0) {
-          deleting = false;
-          ti = (ti + 1) % titles.length;
-          setTimeout(tick, pauseBefore);
-          return;
-        }
-        setTimeout(tick, deleteSpeed);
-      }
-    }
-
-    setTimeout(tick, 1200);
-  })();
 </script>
 </body>
 </html>
