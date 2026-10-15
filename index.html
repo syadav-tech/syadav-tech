@@ -155,7 +155,18 @@
     background: linear-gradient(to bottom, transparent, var(--border), transparent);
   }
 
-  .hero-content { align-self: center; max-width: 1080px; }
+  .hero-content {
+    align-self: center;
+    width: 100%;
+    max-width: 1180px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .hero-primary { min-width: 0; }
+  .hero-secondary { min-width: 0; padding-top: 2.5rem; }
 
   .hero-eyebrow {
     font-size: 0.75rem;
@@ -179,7 +190,7 @@
 
   .hero-name {
     font-family: 'Cormorant Garant', serif;
-    font-size: clamp(3.4rem, 7vw, 6.7rem);
+    font-size: clamp(3.5rem, 7vw, 6.8rem);
     font-weight: 300;
     line-height: 1.0;
     color: var(--text);
@@ -187,27 +198,46 @@
     margin-bottom: 0.8rem;
     opacity: 0;
     animation: fadeUp 0.8s 0.25s forwards;
-    display: flex;
-    align-items: baseline;
-    gap: 0.22em;
-    white-space: nowrap;
   }
 
   .hero-name em { font-style: italic; color: var(--gold); font-weight: 300; }
 
   .hero-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: clamp(0.82rem, 1.6vw, 1rem);
-    font-weight: 700;
-    font-style: normal;
-    color: var(--gold);
-    margin-bottom: 2rem;
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 0;
     opacity: 0;
     animation: fadeUp 0.8s 0.4s forwards;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    line-height: 1.5;
+    min-height: 2em;
+    display: flex;
+    align-items: center;
   }
+
+  .typewriter-text {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .typewriter-cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1em;
+    background: var(--gold);
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: cursorBlink 0.7s step-end infinite;
+    border-radius: 1px;
+  }
+
+  @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 
   .hero-desc {
@@ -528,9 +558,17 @@
   .skill-tags .tag { font-size: 0.75rem; padding: 0.28rem 0.72rem; }
 
   @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-secondary { padding-top: 0; }
+  }
+
   @media (max-width: 560px) {
     .skills-grid { grid-template-columns: 1fr; }
-    .hero-name { white-space: normal; flex-wrap: wrap; gap: 0 0.16em; font-size: clamp(3.1rem, 16vw, 4.5rem); }
+    .hero-name { font-size: clamp(3.1rem, 16vw, 4.5rem); }
   }
 
   #education { background: var(--bg); }
@@ -886,9 +924,12 @@
 <section id="hero">
   <div class="hero-bg-line"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Based in Leamington Spa, United Kingdom</p>
-    <h1 class="hero-name"><span>Shubham</span><em>Yadav</em></h1>
-    <p class="hero-title">Engineering Programme Delivery | NPI &amp; Product Development | Systems Engineering</p>
+    <div class="hero-primary">
+      <p class="hero-eyebrow">Based in Leamington Spa, United Kingdom</p>
+      <h1 class="hero-name">Shubham<br><em>Yadav</em></h1>
+      <p class="hero-title"><span class="typewriter-text" id="typewriterText"></span><span class="typewriter-cursor" id="typewriterCursor"></span></p>
+    </div>
+    <div class="hero-secondary">
     <p class="hero-desc">
       10 years across engineering, product development and programme delivery, including end-to-end ownership of 5+ concurrent OEM programmes and six major product launches. Currently working in Systems Engineering at Jaguar Land Rover, with a growing focus on AI-enabled decision support and programme delivery.
     </p>
@@ -902,6 +943,7 @@
     <div class="hero-actions">
       <a href="#experience" class="btn-primary">View Experience ↓</a>
       <a href="https://www.linkedin.com/in/sy1394/" class="btn-secondary" target="_blank">LinkedIn ↗</a>
+    </div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1481,6 +1523,43 @@
       card.dataset.hidden = (cat !== 'all' && card.dataset.cat !== cat) ? 'true' : 'false';
     });
   };
+
+  (function() {
+    const titles = [
+      'Engineering Programme Delivery',
+      'NPI & Product Development',
+      'Systems Engineering'
+    ];
+    const el = document.getElementById('typewriterText');
+    let ti = 0, ci = 0, deleting = false;
+    const typeSpeed = 60, deleteSpeed = 35, pauseAfter = 1800, pauseBefore = 320;
+
+    function tick() {
+      const current = titles[ti];
+      if (!deleting) {
+        el.textContent = current.slice(0, ci + 1);
+        ci++;
+        if (ci === current.length) {
+          deleting = true;
+          setTimeout(tick, pauseAfter);
+          return;
+        }
+        setTimeout(tick, typeSpeed);
+      } else {
+        el.textContent = current.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) {
+          deleting = false;
+          ti = (ti + 1) % titles.length;
+          setTimeout(tick, pauseBefore);
+          return;
+        }
+        setTimeout(tick, deleteSpeed);
+      }
+    }
+
+    setTimeout(tick, 1200);
+  })();
 
 </script>
 </body>
