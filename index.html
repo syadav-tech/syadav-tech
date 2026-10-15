@@ -49,7 +49,7 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'Outfit', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -155,7 +155,7 @@
     background: linear-gradient(to bottom, transparent, var(--border), transparent);
   }
 
-  .hero-content { align-self: center; max-width: 720px; }
+  .hero-content { align-self: center; max-width: 1080px; }
 
   .hero-eyebrow {
     font-size: 0.75rem;
@@ -179,54 +179,36 @@
 
   .hero-name {
     font-family: 'Cormorant Garant', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-size: clamp(3.4rem, 7vw, 6.7rem);
     font-weight: 300;
     line-height: 1.0;
     color: var(--text);
     letter-spacing: -0.02em;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
     opacity: 0;
     animation: fadeUp 0.8s 0.25s forwards;
+    display: flex;
+    align-items: baseline;
+    gap: 0.22em;
+    white-space: nowrap;
   }
 
   .hero-name em { font-style: italic; color: var(--gold); font-weight: 300; }
 
   .hero-title {
-    font-family: 'Cormorant Garant', serif;
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--text-muted);
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(0.82rem, 1.6vw, 1rem);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--gold);
     margin-bottom: 2rem;
     opacity: 0;
     animation: fadeUp 0.8s 0.4s forwards;
-    min-height: 2em;
-    display: flex;
-    align-items: center;
-    gap: 0;
-  }
-
-  .typewriter-text {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 0.9rem;
-    color: var(--gold);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
+    line-height: 1.5;
   }
 
-  .typewriter-cursor {
-    display: inline-block;
-    width: 0.55em; height: 1em;
-    background: var(--gold);
-    margin-left: 3px;
-    vertical-align: middle;
-    animation: cursorBlink 0.7s step-end infinite;
-    border-radius: 1px;
-  }
-
-  @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
   .hero-desc {
     font-size: 1rem;
@@ -255,8 +237,8 @@
     padding: 0.3rem 0.85rem;
     border: 1px solid var(--border-dim);
     border-radius: 2rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--text-muted);
     background: rgba(255,255,255,0.03);
@@ -330,7 +312,7 @@
     transform: scaleX(0);
   }
 
-  section { padding: 7rem max(2rem, 8vw); position: relative; }
+  section { padding: 5rem max(2rem, 8vw); position: relative; }
 
   .section-label {
     font-size: 0.7rem;
@@ -502,10 +484,10 @@
     line-height: 1.7;
   }
 
-  .timeline-bullets li::before { content: '–'; color: var(--gold-dim); position: absolute; left: 0; top: 0; }
+  .timeline-bullets li::before { content: '-'; color: var(--gold-dim); position: absolute; left: 0; top: 0; }
 
   .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
-  .timeline-tags .tag { font-size: 0.68rem; padding: 0.2rem 0.65rem; }
+  .timeline-tags .tag { font-size: 0.75rem; padding: 0.24rem 0.7rem; }
 
   #skills { background: var(--bg2); }
 
@@ -543,10 +525,13 @@
   }
 
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
-  .skill-tags .tag { font-size: 0.7rem; padding: 0.25rem 0.7rem; }
+  .skill-tags .tag { font-size: 0.75rem; padding: 0.28rem 0.72rem; }
 
   @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-name { white-space: normal; flex-wrap: wrap; gap: 0 0.16em; font-size: clamp(3.1rem, 16vw, 4.5rem); }
+  }
 
   #education { background: var(--bg); }
 
@@ -618,7 +603,7 @@
 
   @media (max-width: 640px) { .cert-list { grid-template-columns: 1fr; } }
 
-  #contact { background: var(--bg); text-align: center; padding: 8rem max(2rem, 8vw); }
+  #contact { background: var(--bg); text-align: center; padding: 5rem max(2rem, 8vw); }
   #contact .section-label { justify-content: center; }
   #contact .section-label::after { display: none; }
   #contact .section-title { margin-bottom: 1rem; }
@@ -902,8 +887,8 @@
   <div class="hero-bg-line"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Based in Leamington Spa, United Kingdom</p>
-    <h1 class="hero-name">Shubham<br><em>Yadav</em></h1>
-    <p class="hero-title"><span class="typewriter-text" id="typewriterText"></span><span class="typewriter-cursor" id="typewriterCursor"></span></p>
+    <h1 class="hero-name"><span>Shubham</span><em>Yadav</em></h1>
+    <p class="hero-title">Engineering Programme Delivery | NPI &amp; Product Development | Systems Engineering</p>
     <p class="hero-desc">
       10 years across engineering, product development and programme delivery, including end-to-end ownership of 5+ concurrent OEM programmes and six major product launches. Currently working in Systems Engineering at Jaguar Land Rover, with a growing focus on AI-enabled decision support and programme delivery.
     </p>
@@ -935,7 +920,7 @@
         PMP®-certified <strong>Programme &amp; Delivery Manager</strong> with 10 years of cross-functional programme delivery across global automotive OEMs and R&amp;D organisations. Proven track record of translating strategic briefs into structured delivery plans, with hands-on experience in BRD authoring, Agile adoption support, and JIRA-based delivery tracking. Consistent record of on-time OEM launches and measurable operational improvement.
       </p>
       <p>
-        At JK Tyre, I owned end-to-end programme delivery across <strong>5+ concurrent projects</strong> and 6 major OEM launches across 5 Tier-1 brands, line-managing a team of 3 engineers and coordinating cross-functional teams of 10–15 from RFQ through homologation and mass-production ramp-up to ~50,000 units/month.
+        At JK Tyre, I owned end-to-end programme delivery across <strong>5+ concurrent projects</strong> and 6 major OEM launches across 5 Tier-1 brands, line-managing a team of 3 engineers and coordinating cross-functional teams of 10-15 from RFQ through homologation and mass-production ramp-up to ~50,000 units/month.
       </p>
       <p>
         At JLR, I operate within a complex R&amp;D systems engineering environment - generating and standardising requirements, facilitating stakeholder workshops, and supporting Agile adoption.
@@ -977,8 +962,8 @@
 
   <div class="portfolio-filters">
     <button class="filter-btn active" onclick="portfolioFilter('all', this)">All</button>
-    <button class="filter-btn" onclick="portfolioFilter('pm', this)">Programme Delivery</button>
-    <button class="filter-btn" onclick="portfolioFilter('data', this)">Data &amp; Analytics</button>
+    <button class="filter-btn" onclick="portfolioFilter('pm', this)">Programme &amp; Engineering</button>
+    <button class="filter-btn" onclick="portfolioFilter('data', this)">Applied AI &amp; Decision Support</button>
   </div>
 
   <div class="portfolio-grid" id="portfolioGrid">
@@ -1159,7 +1144,7 @@
         <span class="timeline-company">Jaguar Land Rover · Gaydon, UK</span>
       </div>
       <div class="timeline-role-block">
-        <div class="timeline-role">Systems Engineer – Lateral Systems</div>
+        <div class="timeline-role">Systems Engineer - Lateral Systems</div>
         <div class="timeline-role-bracket">[ Requirements &amp; Delivery Contributor - Product Engineering ]</div>
       </div>
       <p class="timeline-summary">
@@ -1199,15 +1184,12 @@
         Nearly 7 years owning end-to-end programme delivery across 5+ concurrent projects, including 6 major OEM product launches across 5 Tier-1 brands - accountable for schedule, OEM client relationships, and supplier readiness from RFQ through DVP, APQP, PPAP, homologation, and mass-production ramp-up.
       </p>
       <ul class="timeline-bullets">
-        <li>Owned end-to-end programme delivery across 5+ concurrent projects including 6 major OEM launches across 5 Tier-1 brands - accountable for schedule, OEM relationships, and supplier readiness from RFQ through DVP, APQP, PPAP, homologation, and mass-production ramp-up to ~50,000 units/month.</li>
-        <li>Line-managed a team of 3 engineers while coordinating cross-functional teams of 10–15 across R&amp;D, Sales, Production, and QA - developing capability and driving accountability for delivery milestones.</li>
+        <li>Owned end-to-end programme delivery across 5+ concurrent projects, including 6 major OEM launches across 5 Tier-1 brands, from RFQ and requirements through validation, homologation, manufacturing readiness and production.</li>
+        <li>Line-managed a team of 3 engineers while coordinating cross-functional teams of 10-15 across R&amp;D, Sales, Production and Quality.</li>
         <li>Acted as primary OEM customer contact, coordinating technical discussions, programme actions and delivery alignment across customer and internal teams.</li>
-        <li>Performed Ride &amp; Handling and NVH tyre tuning in direct collaboration with OEM chassis and suspension teams - translating subjective vehicle-dynamics feedback into tyre construction and compound changes across ride, handling, and noise parameters.</li>
-        <li>Delivered products through multi-market homologation and regulatory approval - including ECE (Europe), GSO/SASO (Gulf), SNI (Indonesia), and FMVSS/SAE standards - managing a single programme against multiple concurrent regulatory regimes.</li>
         <li>Facilitated OEM and IATF 16949 quality-system audits and corrective-action tracking; managed CapEx budgets and business cases, including investment proposals and expenditure tracking.</li>
-        <li>Led a change-management initiative consolidating fragmented legacy material lineups, achieving a 50% improvement in production changeover efficiency through structured change control and cross-functional coordination.</li>
-        <li>Established stage-gate governance, delivery roadmaps, milestone tracking, RAID logs, action controls and cross-functional reporting to manage scope, schedule, quality and delivery risks.</li>
-        <li>Tracked programme milestones, risks, actions and delivery status, providing structured progress reporting to senior leadership and OEM stakeholders throughout the product-development lifecycle.</li>
+        <li>Led a change-management initiative consolidating fragmented legacy material lineups, achieving a 50% improvement in production changeover efficiency.</li>
+        <li>Established stage-gate governance, delivery roadmaps, milestone tracking, RAID logs, action controls and structured progress reporting across concurrent programmes.</li>
       </ul>
       <div class="timeline-tags">
         <span class="tag">APQP</span>
@@ -1333,14 +1315,14 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <p class="section-label">Professional Credentials</p>
-  <h2 class="section-title">Certifications</h2>
+  <h2 class="section-title">Selected Certifications</h2>
   <div class="cert-list">
 
     <div class="cert-item">
       <div class="cert-icon">PMP</div>
       <div>
         <div class="cert-name">Project Management Professional (PMP®)</div>
-        <div class="cert-issuer">Project Management Institute · Nov 2024 – Nov 2027</div>
+        <div class="cert-issuer">Project Management Institute · Nov 2024 - Nov 2027</div>
       </div>
     </div>
 
@@ -1361,30 +1343,6 @@
     </div>
 
     <div class="cert-item">
-      <div class="cert-icon">DLG</div>
-      <div>
-        <div class="cert-name">Data Landscape of Generative AI for Project Managers</div>
-        <div class="cert-issuer">Project Management Institute · 2024</div>
-      </div>
-    </div>
-
-    <div class="cert-item">
-      <div class="cert-icon">PE</div>
-      <div>
-        <div class="cert-name">Talking to AI: Prompt Engineering for Project Managers</div>
-        <div class="cert-issuer">Project Management Institute · Nov 2024</div>
-      </div>
-    </div>
-
-    <div class="cert-item">
-      <div class="cert-icon">P6</div>
-      <div>
-        <div class="cert-name">Primavera P6 Essential Training</div>
-        <div class="cert-issuer">LinkedIn Learning · Dec 2025</div>
-      </div>
-    </div>
-
-    <div class="cert-item">
       <div class="cert-icon">BA</div>
       <div>
         <div class="cert-name">Business Analysis for Project Managers</div>
@@ -1397,30 +1355,6 @@
       <div>
         <div class="cert-name">Systems Engineering with SysML</div>
         <div class="cert-issuer">LinkedIn Learning · Nov 2025</div>
-      </div>
-    </div>
-
-    <div class="cert-item">
-      <div class="cert-icon">AGL</div>
-      <div>
-        <div class="cert-name">Agile Project Management</div>
-        <div class="cert-issuer">Google · Jul 2024</div>
-      </div>
-    </div>
-
-    <div class="cert-item">
-      <div class="cert-icon">GDT</div>
-      <div>
-        <div class="cert-name">Introduction to Geometric Dimensioning &amp; Tolerancing</div>
-        <div class="cert-issuer">LinkedIn Learning · Oct 2023</div>
-      </div>
-    </div>
-
-    <div class="cert-item">
-      <div class="cert-icon">RCA</div>
-      <div>
-        <div class="cert-name">Problem Solving Expert via Root Cause Analysis</div>
-        <div class="cert-issuer">Confederation of Indian Industry · Mar 2022</div>
       </div>
     </div>
 
@@ -1548,42 +1482,6 @@
     });
   };
 
-  (function() {
-    const titles = [
-      'Engineering Programme Delivery',
-      'NPI & Product Development',
-      'Systems Engineering'
-    ];
-    const el = document.getElementById('typewriterText');
-    let ti = 0, ci = 0, deleting = false;
-    const typeSpeed = 60, deleteSpeed = 35, pauseAfter = 1800, pauseBefore = 320;
-
-    function tick() {
-      const current = titles[ti];
-      if (!deleting) {
-        el.textContent = current.slice(0, ci + 1);
-        ci++;
-        if (ci === current.length) {
-          deleting = true;
-          setTimeout(tick, pauseAfter);
-          return;
-        }
-        setTimeout(tick, typeSpeed);
-      } else {
-        el.textContent = current.slice(0, ci - 1);
-        ci--;
-        if (ci === 0) {
-          deleting = false;
-          ti = (ti + 1) % titles.length;
-          setTimeout(tick, pauseBefore);
-          return;
-        }
-        setTimeout(tick, deleteSpeed);
-      }
-    }
-
-    setTimeout(tick, 1200);
-  })();
 </script>
 </body>
 </html>
